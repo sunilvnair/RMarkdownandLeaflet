@@ -1,0 +1,38 @@
+---
+title: 'Peer-graded Assignment: R Markdown and Leaflet'
+author: "Sunil V Nair"
+date: "5 November 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown and Leaflet
+
+Peer-graded Assignment: R Markdown and Leaflet 
+This information will show interactive maps using library(leaflet)
+
+```{r lib}
+library(leaflet)
+
+library(maps)
+mapStates = map("Qatar", fill = TRUE, plot = FALSE)
+leaflet(data = mapStates) %>% addTiles() %>%
+  addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)
+```
+
+## Interactive Maps
+
+You can use maps shon below
+
+
+
+```{r lib-mp}
+SunMap <- leaflet() %>% addTiles() 
+SunMap <- SunMap %>% addMarkers(lat=-25.316486025, lng= 51.452419151, popup="Sunils Location")
+SunMap
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
